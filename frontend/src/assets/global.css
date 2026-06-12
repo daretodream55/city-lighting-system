@@ -1,0 +1,129 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body, #app { height: 100%; font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+body { background: #f0f2f5; }
+
+/* 登录页 */
+.login-container {
+  display: flex; justify-content: center; align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #01579b 100%);
+}
+.login-card {
+  width: 420px; padding: 40px;
+  background: rgba(255,255,255,0.95); border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.login-card h2 {
+  text-align: center; margin-bottom: 32px;
+  color: #1a237e; font-size: 24px;
+}
+.login-card .subtitle {
+  text-align: center; color: #666; margin-bottom: 24px; font-size: 13px;
+}
+
+/* 主布局 */
+.main-layout { height: 100vh; display: flex; flex-direction: column; }
+.main-header {
+  height: 56px; background: #1a237e; color: #fff;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.main-header .logo { font-size: 18px; font-weight: bold; letter-spacing: 1px; }
+.main-header .user-info { display: flex; align-items: center; gap: 12px; }
+.main-body { flex: 1; display: flex; overflow: hidden; }
+.main-sidebar {
+  width: 220px; background: #fff; flex-shrink: 0;
+  border-right: 1px solid #e8e8e8; overflow-y: auto;
+}
+.main-content {
+  flex: 1; overflow-y: auto; padding: 20px;
+  background: #f0f2f5;
+}
+.main-content .page-title {
+  font-size: 20px; font-weight: 600; margin-bottom: 20px;
+  color: #1a237e; padding-bottom: 12px; border-bottom: 2px solid #1a237e;
+}
+
+/* 侧边栏菜单 */
+.sidebar-menu { border-right: none !important; }
+.sidebar-menu .el-menu-item { height: 48px; line-height: 48px; }
+
+/* 统计卡片 */
+.stats-row { display: flex; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+.stat-card {
+  flex: 1; min-width: 200px; padding: 20px;
+  background: #fff; border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex; align-items: center; gap: 16px;
+}
+.stat-card .stat-icon {
+  width: 56px; height: 56px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; color: #fff;
+}
+.stat-card .stat-info .stat-value { font-size: 28px; font-weight: bold; color: #333; }
+.stat-card .stat-info .stat-label { font-size: 13px; color: #999; margin-top: 4px; }
+
+/* 搜索栏 */
+.search-bar {
+  background: #fff; padding: 16px 20px;
+  border-radius: 8px; margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+}
+
+/* 表格容器 */
+.table-container {
+  background: #fff; border-radius: 8px;
+  padding: 0 20px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* 状态标签 */
+.status-normal { color: #67c23a; }
+.status-fault { color: #f56c6c; }
+.status-maintenance { color: #e6a23c; }
+.status-repair { color: #f56c6c; }
+.status-scrapped { color: #909399; }
+.status-deleted { color: #c0c4cc; }
+
+/* 地图容器 - 关键修复 */
+.map-container {
+  width: 100%;
+  height: calc(100vh - 180px);
+  min-height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  position: relative;
+}
+.map-container .leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* 弹出框样式 */
+.device-popup { min-width: 200px; }
+.device-popup h4 { margin-bottom: 8px; color: #1a237e; }
+.device-popup p { margin: 4px 0; font-size: 13px; color: #666; }
+
+/* 仪表盘 */
+.chart-row { display: flex; gap: 16px; margin-bottom: 20px; }
+.chart-card {
+  flex: 1; min-width: 350px; background: #fff;
+  border-radius: 8px; padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.chart-card h3 { font-size: 16px; color: #333; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+
+/* 表单 */
+.form-section { margin-top: 20px; }
+.form-section .el-divider { margin: 16px 0; }
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .main-sidebar { display: none; }
+  .stats-row { flex-direction: column; }
+  .chart-row { flex-direction: column; }
+}

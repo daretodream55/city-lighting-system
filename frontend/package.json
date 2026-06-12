@@ -1,0 +1,22 @@
+{
+  "name": "city-lighting-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "vue": "^2.7.14",
+    "vue-router": "^3.6.5",
+    "element-ui": "^2.15.14",
+    "axios": "^1.6.2",
+    "leaflet": "^1.9.4",
+    "echarts": "^5.4.3",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^5.0.8",
+    "vue-template-compiler": "^2.7.14"
+  }
+}
