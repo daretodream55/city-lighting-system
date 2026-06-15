@@ -46,9 +46,10 @@ export default {
           localStorage.setItem('token', res.token)
           localStorage.setItem('user', JSON.stringify(res.user))
           this.$message.success('登录成功')
-          this.$router.push('/dashboard')
+          // 使用 replace 跳转到首页总览
+          this.$router.replace('/overview').catch(() => {})
         } catch (e) {
-          // error handled by interceptor
+          this.$message.error(e.response?.data?.error || '登录失败')
         } finally {
           this.loading = false
         }

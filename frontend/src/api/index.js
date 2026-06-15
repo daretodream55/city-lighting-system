@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
+import router from '../router'
 
 const api = axios.create({
   baseURL: '/api',
@@ -24,7 +25,10 @@ api.interceptors.response.use(
     if (error.response?.status === 401 || error.response?.status === 403) {
       localStorage.removeItem('token')
       localStorage.removeItem('user')
-      window.location.href = '/login'
+      // 避免在已经是登录页时重复跳转
+      if (router.currentRoute.path !== '/login') {
+        router.replace('/login').catch(() => {})
+      }
     }
     return Promise.reject(error)
   }
